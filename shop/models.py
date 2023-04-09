@@ -1,5 +1,8 @@
 from django.db import models
 from django.utils import timezone
+from django.contrib import admin
+
+admin.ModelAdmin.ordering = ['-title']
 
 
 class Category(models.Model):
@@ -11,6 +14,7 @@ class Category(models.Model):
     # Это первый столбец таблицы
     created_at = models.DateTimeField(default=timezone.now)
     # Это время создания категории. Это второе поле или иначе столбец
+    # admin.ModelAdmin.ordering = ['title']
 
     def __str__(self):
         return self.title
