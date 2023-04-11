@@ -2,7 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.contrib import admin
 
-admin.ModelAdmin.ordering = ['-title']
+admin.ModelAdmin.ordering = ['title']
 
 
 class Category(models.Model):
