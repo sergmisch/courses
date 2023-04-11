@@ -3,7 +3,8 @@ from . import views  # . означает, что импортируем из т
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('testpage/', views.testpage, name='testpage')
+    path('categories/', views.categories, name='categories'),
+    path('courses_1/', views.courses_1, name='courses_1'),
     # аргумент '' - корневой маршрут для приложения.
     # name='index' - название маршрута
 ]

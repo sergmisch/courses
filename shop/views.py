@@ -4,11 +4,17 @@ from .models import Category, Course
 # . перед models означает импорт из текущей папки
 
 
-def index(request):  # назвали index , т.к. она будет отвечать за то,
-    # что возвращается при обрашении на главную страницу приложения shop
-    courses = Course.objects.all()
+def index(request):
+    courses = Course.objects.all()  # Создаем QuerySet объект из модели Course
     return render(request, 'courses.html', {'courses': courses})
 
 
-def testpage(request):
-    return HttpResponse("Это тестовая страница")
+def categories(request):
+    # Создаем QuerySet объект из модели Course
+    categories = Category.objects.all()  # Создаем QuerySet объект из модели Course
+    return render(request, 'categories.html', {'categories': categories})
+
+
+def courses_1(request):
+    courses = Course.objects.filter(category_id=1)
+    return render(request, 'courses.html', {'courses': courses})
