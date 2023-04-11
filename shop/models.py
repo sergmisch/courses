@@ -15,7 +15,7 @@ class Category(models.Model):
     created_at = models.DateTimeField(default=timezone.now)
     # Это время создания категории. Это второе поле или иначе столбец
     # admin.ModelAdmin.ordering = ['title']
-    link = models.URLField()
+    link = models.CharField(max_length=100)
 
     def __str__(self):
         return self.title

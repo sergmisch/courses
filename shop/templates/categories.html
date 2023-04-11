@@ -7,8 +7,7 @@
     <tbody>
         {%for category in categories%}
         <tr>
-            <td>{{category.title}}</td>
-            <td>{{category.link}}</td>
+            <td><a href="{{category.link}}">{{category.title}}<a></td>
         </tr>
         {% endfor %}
     </tbody>
