@@ -1,7 +1,10 @@
-{% extends 'base.html' %} {% block pagename %}{{course.title}}{% endblock %}
-{%block content %}
+{% extends 'base.html' %} 
 
-<h2>{{course.title}}</h2>
+{% block pagename %}{{course.title}}{% endblock %} 
+
+{%block content%}
+
+<h2 class="mt-5">{{course.title}}</h2>
 <h2>{{course.category}}</h2>
 <p>{{course.price}}</p>
 <p>{{course.students_qty}}</p>
