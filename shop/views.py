@@ -9,12 +9,8 @@ def index(request):
     return render(request, 'courses.html', {'courses': courses})
 
 
-def categories(request):
-    # Создаем QuerySet объект из модели Course
-    categories = Category.objects.all()  # Создаем QuerySet объект из модели Course
-    return render(request, 'categories.html', {'categories': categories})
 
-
-def courses_1(request):
-    courses = Course.objects.filter(category_id=1)
-    return render(request, 'courses.html', {'courses': courses})
+def single_course(request, course_id): # аргумент 'course_id' получаем из файла urls.py из аргумента функции path()
+    # который изначально приходит из адреса в строке браузера
+    course = Course.objects.get(pk=course_id)
+    return render(request, 'single_course.html', {'course': course})

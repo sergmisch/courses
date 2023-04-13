@@ -4,5 +4,4 @@ from . import models
 
 admin.site.register(models.Category)
 admin.site.register(models.Course)
-
 # Register your models here.

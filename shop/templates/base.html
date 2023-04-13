@@ -10,13 +10,14 @@
       integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
       crossorigin="anonymous"
     />
-    <title>Document</title>
+    <title>{% block pagename %}{% endblock %}</title>
   </head>
   <body>
-    <nav class="navbar navbar-dark"></nav>
-    <div class="container">
-      <a href="" class="navbar-brand">Courses Shop</a>
-    </div>
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container">
+        <a href="" class="navbar-brand">Courses Shop</a>
+      </div>
+    </nav>
     <main class="container">{% block content %} {% endblock %}</main>
     {# сюда мы будем вставлять таблицы из других файлов #}
   </body>
