@@ -15,10 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include  # добавляем импорт include
+from api.models import CourseResource, CategoryResource
+course_resourse = CourseResource()
+category_resourse = CategoryResource()
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('shop/', include('shop.urls')),
+    path('api/', include(course_resourse.urls)),
+    path('api/', include(category_resourse.urls)),
     # функция include() подключает все маршруты из файла urls.py в папке shop к нашему проекту
     # после shop/ может быть много разных страниц
 ]
