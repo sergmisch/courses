@@ -2,8 +2,6 @@ from django.db import models
 from django.utils import timezone
 from django.contrib import admin
 
-admin.ModelAdmin.ordering = ['title']
-
 
 class Category(models.Model):
     # Модель Category - это наш класс, созданный из родительского класса models.Model
@@ -16,6 +14,7 @@ class Category(models.Model):
     # Это время создания категории. Это второе поле или иначе столбец
     # admin.ModelAdmin.ordering = ['title']
     link = models.CharField(max_length=100)
+    sort_key = models.CharField(max_length=50, default='id')
 
     def __str__(self):
         return self.title
@@ -25,10 +24,15 @@ class Category(models.Model):
 
 
 class Course(models.Model):
+    # class Meta:
+    #     ordering = ['category', 'title']
+
     # Создаем еще один класс для таблицы курсов
     title = models.CharField(max_length=127)
-    price = models.FloatField()  # Цена - число с плавающей точкой
-    students_qty = models.IntegerField()  # Количество студентов - целое число
+    # Цена - число с плавающей точкой
+    price = models.FloatField()
+    # Количество студентов - целое число
+    students_qty = models.IntegerField()
     reviews_qty = models.IntegerField()  # Кол-во отзывов
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     # Это поле нужно добавлять для привязки к вышестоящей категории
@@ -38,5 +42,8 @@ class Course(models.Model):
     # при удалении Категории будут удаляться все курсы внутри этой категории
     created_at = models.DateTimeField(default=timezone.now)
 
-    def __str__(self):
-        return self.title
+    # def __str__(self):
+    #     return self.title
+
+
+# admin.ModelAdmin.ordering = ['title']

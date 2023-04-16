@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "54ea27c390ef286e66446af26c35501f82ec2c3572754b6c89894c3d722aeafc"
+            "sha256": "cea5843548b1a9d0be440f53cc3396845cb059a0a1707a432b36b7ee0f6c2504"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -34,10 +34,10 @@
         },
         "django-tastypie": {
             "hashes": [
-                "sha256:0f17da085a1583c434dc0fb0ded8dd66c09a512689d0ce705f61629337d5e740"
+                "sha256:c27b1a99efb0b13fb7b49b80fb79a7536b5915aaef788b58852f07e02d4779e8"
             ],
             "index": "pypi",
-            "version": "==0.14.5"
+            "version": "==0.14.4"
         },
         "python-dateutil": {
             "hashes": [
