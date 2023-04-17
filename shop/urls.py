@@ -1,7 +1,8 @@
 from django.urls import path
-from . import views  # . означает, что импортируем из текущей папки
+# . означает, что импортируем из текущей папки
+from . import views
 
-app_name = 'shop'  # имя приложения
+# app_name = 'shop'  # имя приложения
 
 urlpatterns = [
     path('', views.index, name='index'),
