@@ -18,8 +18,8 @@ from django.urls import path, include  # добавляем импорт include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('shop/', include('shop.urls')),
-    # после shop/ может быть много разных страниц
+    path('', include('shop.urls')),
     # функция include() подключает все маршруты из файла urls.py в папке shop к нашему проекту
+
     path('api/', include('api.urls'))
 ]

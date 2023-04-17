@@ -2,7 +2,7 @@ from django.urls import path
 # . означает, что импортируем из текущей папки
 from . import views
 
-# app_name = 'shop'  # имя приложения
+app_name = 'shop'  # имя приложения
 
 urlpatterns = [
     path('', views.index, name='index'),
