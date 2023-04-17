@@ -2,7 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.contrib import admin
 
-admin.ModelAdmin.ordering = ['title']
+# admin.ModelAdmin.ordering = ['title']
 
 
 class Category(models.Model):
@@ -27,8 +27,10 @@ class Category(models.Model):
 class Course(models.Model):
     # Создаем еще один класс для таблицы курсов
     title = models.CharField(max_length=127)
-    price = models.FloatField()  # Цена - число с плавающей точкой
-    students_qty = models.IntegerField()  # Количество студентов - целое число
+    # Цена - число с плавающей точкой
+    price = models.FloatField()
+    # Количество студентов - целое число
+    students_qty = models.IntegerField()
     reviews_qty = models.IntegerField()  # Кол-во отзывов
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     # Это поле нужно добавлять для привязки к вышестоящей категории
