@@ -18,7 +18,7 @@
         {% for course in courses %}
         <tr>
             <td>
-                <a href={% url "shop:single_course" course.id %}>{{ course.title }}</a>
+                <a href={{ course.get_absolute_url }}>{{ course.title }}</a>
             </td>
             <td>{{ course.category }}</td>
             <td>{{ course.price }}</td>

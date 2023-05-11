@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib import admin
+from django.urls import reverse
 
 # admin.ModelAdmin.ordering = ['title']
 
@@ -40,5 +41,12 @@ class Course(models.Model):
     # при удалении Категории будут удаляться все курсы внутри этой категории
     created_at = models.DateTimeField(default=timezone.now)
 
-    def __str__(self):
+    def __str__(self): # для отображения имени title в админке
         return self.title
+    
+    # метод для формирования ссылки
+    def get_absolute_url(self):
+        return reverse("shop:single_course", kwargs={"course_id": self.id})
+    # "shop:single_course" - имя маршрута
+    # "course_id" - переменная, которую передаем в машрут для формирования ссылки
+    
